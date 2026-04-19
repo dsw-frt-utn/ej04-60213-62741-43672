@@ -37,6 +37,8 @@ public class Persistencia {
         sucursales.add(s2);
     }
     
+    
+    
     private static void inicializarVehiculos(){
         Sucursal s1 = sucursales.get(0);
         Sucursal s2 = sucursales.get(1);
@@ -65,9 +67,21 @@ public class Persistencia {
         return vehiculos;
     }
     
+    
+    
     public static Optional<Vehiculo> getVehiculo(String patente){
         return vehiculos.stream()
                 .filter(v -> v.getPatente().equals(patente))
+                .findFirst();
+    }
+    
+    public static void insertarVehiculo(Vehiculo veh){
+        vehiculos.add(veh);
+    }
+    
+    public static Optional<Sucursal> getSucursal(String sucursal){
+        return sucursales.stream()
+                .filter(s -> s.getCodigo().equals(sucursal))
                 .findFirst();
     }
     
