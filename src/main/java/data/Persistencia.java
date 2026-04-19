@@ -49,11 +49,11 @@ public class Persistencia {
         Marca marcaVehiculo, VehiculoTipo tipo, String patente, String marca, String modelo, 
         int anio, double capacidadCarga, Sucursal sucursal, double kwhBase
         */
-        VehiculoElectrico v1 = new VehiculoElectrico("AE123FG", "Renault", "Kangoo E-Tech", 2020, 1000, s1, 16, marcaE1);
-        VehiculoElectrico v2 = new VehiculoElectrico("AF456HI", "Ford", "E-Transit", 2021, 1300, s2, 16, marcaE2);
+        VehiculoElectrico v1 = new VehiculoElectrico("AE123FG", "Kangoo E-Tech", 2020, 1000, s1, 16, marcaE1);
+        VehiculoElectrico v2 = new VehiculoElectrico("AF456HI", "E-Transit", 2021, 1300, s2, 16, marcaE2);
 
-        VehiculoCombustible v3 = new VehiculoCombustible("AC789JK", "Iveco", "Daily", 2023, 1200, s1, 8, 1.5, marcaC1);
-        VehiculoCombustible v4 = new VehiculoCombustible("AD321LM", "Mercedes", "Sprinter", 2020, 1200, s2, 7, 1, marcaC2);
+        VehiculoCombustible v3 = new VehiculoCombustible("AC789JK", "Daily", 2023, 1200, s1, 8, 1.5, marcaC1);
+        VehiculoCombustible v4 = new VehiculoCombustible("AD321LM", "Sprinter", 2020, 1200, s2, 7, 1, marcaC2);
         
         vehiculos.add(v1);
         vehiculos.add(v2);

@@ -2,7 +2,7 @@ package domain;
 
 public abstract class Vehiculo {
     protected String patente;
-    protected String marca; //Este lo voy a borrar
+    //protected String marca; Este lo borro y lo saco del constructor
     protected String modelo;
     protected int anio;
     protected double capacidadCarga;
@@ -10,9 +10,8 @@ public abstract class Vehiculo {
     private VehiculoTipo tipo;
     private Marca marcaVehiculo; //Y voy  a dejar este
 
-    public Vehiculo(Marca marcaVehiculo, VehiculoTipo tipo, String patente, String marca, String modelo, int anio, double capacidadCarga, Sucursal sucursal) {
+    public Vehiculo(Marca marcaVehiculo, VehiculoTipo tipo, String patente, String modelo, int anio, double capacidadCarga, Sucursal sucursal) {
         this.patente = patente;
-        this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
         this.capacidadCarga = capacidadCarga;
@@ -58,6 +57,6 @@ public abstract class Vehiculo {
     }
     @Override
     public String toString() {
-        return patente + " - " + marca + " " + modelo + " - Sucursal: " + sucursal.getCodigo();
+        return patente + " - " + marcaVehiculo.getNombre() + " " + modelo + " - Sucursal: " + sucursal.getCodigo();
     }
 }
