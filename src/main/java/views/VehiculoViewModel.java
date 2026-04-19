@@ -12,6 +12,8 @@ public class VehiculoViewModel {
     private int anio;
     private double litrosExtra;
     private double kmARecorrer;
+    private String marcaNombre;
+    private String marcaPais;
     
     public VehiculoViewModel(Vehiculo vehiculo){
         if(vehiculo == null)return;
@@ -24,6 +26,8 @@ public class VehiculoViewModel {
         kmPorLitro = vehiculo instanceof VehiculoCombustible ? ((VehiculoCombustible)vehiculo).getKilometrosPorLitro() : 0;
         litrosExtra = vehiculo instanceof VehiculoCombustible ? ((VehiculoCombustible)vehiculo).getLitrosExtra() : 0;
         kmARecorrer = 100;
+        marcaNombre = vehiculo.getMarcaVehiculo().getNombre();
+        marcaPais = vehiculo.getMarcaVehiculo().getPaisOrigen();
     }
 
     public String getPatente() {
@@ -61,4 +65,22 @@ public class VehiculoViewModel {
     public String getSucursal() {
         return sucursal;
     }
+
+    public String getMarcaNombre() {
+        return marcaNombre;
+    }
+
+    public void setMarcaNombre(String marcaNombre) {
+        this.marcaNombre = marcaNombre;
+    }
+
+    public String getMarcaPais() {
+        return marcaPais;
+    }
+
+    public void setMarcaPais(String marcaPais) {
+        this.marcaPais = marcaPais;
+    }
+    
+    
 }

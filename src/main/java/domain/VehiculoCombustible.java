@@ -7,8 +7,8 @@ public class VehiculoCombustible extends Vehiculo {
     private double litrosExtra;
 
     public VehiculoCombustible(String patente, String marca, String modelo, int anio, double capacidadCarga,
-                               Sucursal sucursal, double kilometrosPorLitro, double litrosExtra) {
-        super(VehiculoTipo.COMBUSTIBLE, patente, marca, modelo, anio, capacidadCarga, sucursal);
+                               Sucursal sucursal, double kilometrosPorLitro, double litrosExtra, Marca marcaVehiculo) {
+        super(marcaVehiculo, VehiculoTipo.COMBUSTIBLE, patente, marca, modelo, anio, capacidadCarga, sucursal);
         this.kilometrosPorLitro = kilometrosPorLitro;
         this.litrosExtra = litrosExtra;
     }
