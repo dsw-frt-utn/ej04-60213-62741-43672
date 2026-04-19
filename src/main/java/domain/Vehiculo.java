@@ -11,13 +11,13 @@ public abstract class Vehiculo {
     private Marca marcaVehiculo; //Y voy  a dejar este
 
     public Vehiculo(Marca marcaVehiculo, VehiculoTipo tipo, String patente, String modelo, int anio, double capacidadCarga, Sucursal sucursal) {
-        this.patente = patente;
-        this.modelo = modelo;
-        this.anio = anio;
-        this.capacidadCarga = capacidadCarga;
-        this.sucursal = sucursal;
-        this.tipo = tipo;
-        this.marcaVehiculo = marcaVehiculo;
+        this.patente = patente; //CHECK
+        this.modelo = modelo; //CHECK
+        this.anio = anio; //CHECK
+        this.capacidadCarga = capacidadCarga;//CHECK
+        this.sucursal = sucursal; //CHECK
+        this.tipo = tipo; //CHECK
+        this.marcaVehiculo = marcaVehiculo; 
     }
 
     public Marca getMarcaVehiculo() {

@@ -1,7 +1,11 @@
 package views;
 
 import data.Persistencia;
+import domain.Marca;
+import domain.Sucursal;
 import domain.Vehiculo;
+import domain.VehiculoCombustible;
+import domain.VehiculoElectrico;
 import domain.VehiculoTipo;
 import java.util.ArrayList;
 import java.util.Map;
@@ -17,6 +21,24 @@ public class Controlador {
         return vehiculos;
     }
     
+    public static void agregarVehiculo(String patente, String tipo, String sucursal, String marca, String modelo, int anio, double capCarga, String pais, double kwhBase, double Lextra, double kmL){
+        Vehiculo vehiculoAgregar;
+        Marca marca1 = new Marca(marca, pais);
+        Optional<Sucursal> sucur = Persistencia.getSucursal(sucursal);
+        if(sucur.isPresent()){
+            if(tipo.equals("ELECTRICO")){
+                vehiculoAgregar = new VehiculoElectrico(patente, modelo, anio, capCarga, sucur.get(), kwhBase, marca1);
+            }else{
+                vehiculoAgregar = new VehiculoCombustible(patente, modelo, anio, capCarga, sucur.get(), kmL, Lextra, marca1);
+            }
+            Persistencia.insertarVehiculo(vehiculoAgregar);
+        }else{
+            System.out.println("Error al insertar sucursal");
+        }
+        
+    }
+    
+    
     public static double[] calcularConsumos(Map<String, Double> vehiculos){
         double consumoElectricos = 0;
         double consumoCombustible= 0;
@@ -31,4 +53,6 @@ public class Controlador {
         }
         return new double[] {consumoElectricos, consumoCombustible};
     }
+    
+    
 }
